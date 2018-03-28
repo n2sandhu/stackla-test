@@ -1,9 +1,9 @@
 
 const rp = require('request-promise');
 const sentiment = require('sentiment');
-
+const accessToken = '2928100832.b34ca46.8bba36c91160477b8a85460c95156293';
 // Get a list of recent media tagged with '#stacklasocial'
-rp('https://api.instagram.com/v1/tags/stacklasocial/media/recent?access_token=2928100832.b34ca46.8bba36c91160477b8a85460c95156293')
+rp(`https://api.instagram.com/v1/tags/stacklasocial/media/recent?access_token=${accessToken}`)
 .then(response => {
   response = JSON.parse(response);
   // join the caption-text of all the recent posts
